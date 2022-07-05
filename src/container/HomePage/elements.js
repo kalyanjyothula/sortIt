@@ -47,6 +47,7 @@ const SlideFromRight = keyframes`
 
 export const HomePageConatinerWrapper = styled.div`
   display: flex;
+  flex-direction: column;
 `;
 
 export const HomePageBCImageContainer = styled.div`
@@ -93,6 +94,7 @@ export const HomePageFeaturesContainer = styled.div`
   flex-wrap: wrap;
   background: #edfafe;
   padding: 1rem;
+  /* max-width: var(--max-width); */
 `;
 
 export const FeatureBoxConatiner = styled.div`
@@ -155,20 +157,138 @@ export const StoriesContainer = styled.div`
 
 export const StoriesContainerHeaderContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 0.25rem;
 `;
 
 export const StoriesHeader = styled.h1`
   font-size: 2rem;
   letter-spacing: 0.25rem;
-  line-height: 1.5;
+  line-height: 1;
 `;
 
 export const StoriesBottomBar = styled.div`
   height: 5px;
-  width: 100px;
+  width: 80px;
   border-radius: 0.25rem;
   background: blue;
   color: red;
+`;
+
+export const StoriesContentContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0.75rem;
+  margin-top: 0.5rem;
+  position: relative;
+  flex-wrap: wrap;
+`;
+
+export const StoriesContentImgWrapper = styled.div`
+  /* border-radius: 0.25rem; */
+  max-height: 20rem;
+  max-width: 25rem;
+  position: relative;
+  ::before {
+    content: "";
+    border: 5px solid gray;
+    position: absolute;
+    top: 1rem;
+    left: -1rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.25rem;
+  }
+`;
+
+export const StoriesImg = styled.img`
+  display: block;
+  border-radius: 0.25rem;
+  object-fit: cover;
+  max-height: 20rem;
+  max-width: 25rem;
+  z-index: 999;
+  position: relative;
+`;
+
+export const StoryContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  font-size: 2rem;
+  font-weight: 200;
+  @media screen and (max-width: 62rem) {
+    width: 100%;
+    padding: 0.25rem;
+    margin: 1.5rem;
+    text-align: center;
+  }
+`;
+
+export const ServicesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 0.25rem;
+`;
+
+export const ServicesContainerHeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.4rem;
+`;
+
+export const ServiceHeader = styled.h1`
+  font-size: 2rem;
+  letter-spacing: 0.25rem;
+  line-height: 1;
+`;
+
+export const ServiceBottomBar = styled.div`
+  height: 5px;
+  width: 80px;
+  border-radius: 0.25rem;
+  background: blue;
+  color: red;
+`;
+
+export const ServiesCompanyImgContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* max-width: 1360px; */
+`;
+
+export const ServiesCompanyImg = styled.img`
+  display: block;
+  object-fit: cover;
+`;
+
+export const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  height: 8rem;
+`;
+
+export const SocialIconsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
+export const SocialCopyRightContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
 `;

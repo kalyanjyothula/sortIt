@@ -6,6 +6,7 @@ import App from "./container/App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store/configureStore";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

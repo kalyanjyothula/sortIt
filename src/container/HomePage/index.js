@@ -1,5 +1,9 @@
 import React from "react";
 import Header from "../../components/Header";
+import Story from "../../images/story.jpg";
+import Company from "../../images/Tcs.png";
+import Tech from "../../images/Tech.png";
+import Jio from "../../images/Jio.png";
 import {
   FeatureBoxConatiner,
   FeatureContentContainer,
@@ -14,7 +18,21 @@ import {
   StoriesBottomBar,
   StoriesContainer,
   StoriesContainerHeaderContainer,
+  StoriesContentContainer,
+  StoriesContentImgWrapper,
   StoriesHeader,
+  StoriesImg,
+  HomePageConatinerWrapper,
+  StoryContentWrapper,
+  ServicesContainer,
+  ServicesContainerHeaderContainer,
+  ServiceHeader,
+  ServiceBottomBar,
+  ServiesCompanyImgContainer,
+  ServiesCompanyImg,
+  FooterContainer,
+  SocialIconsContainer,
+  SocialCopyRightContainer,
 } from "./elements";
 import Visual from "../../icons/Visual";
 import Colabrate from "../../icons/Colabrate";
@@ -22,7 +40,7 @@ import Track from "../../icons/Track";
 
 export default function HomePage(props) {
   return (
-    <React.Fragment>
+    <HomePageConatinerWrapper>
       <Header />
       <HomePageBCImageContainer>
         <HomePageTitleHeader>
@@ -81,7 +99,81 @@ export default function HomePage(props) {
           <StoriesHeader>Stories</StoriesHeader>
           <StoriesBottomBar />
         </StoriesContainerHeaderContainer>
+        <StoriesContentContainer>
+          <StoriesContentImgWrapper>
+            <StoriesImg src={Story} alt="img" />
+          </StoriesContentImgWrapper>
+          <StoryContentWrapper>
+            SortIt has become such an integral part of our work! By putting our
+            work on ClickUp and organizing it into Sprints, we made it easy to
+            work across departments without overloading ourselves with meetings
+            and email threads.
+          </StoryContentWrapper>
+        </StoriesContentContainer>
       </StoriesContainer>
-    </React.Fragment>
+      <ServicesContainer>
+        <ServicesContainerHeaderContainer>
+          <ServiceHeader>Servies</ServiceHeader>
+          <ServiceBottomBar />
+        </ServicesContainerHeaderContainer>
+        <ServiesCompanyImgContainer>
+          <ServiesCompanyImg src={Company} alt="cmp" />
+          <ServiesCompanyImg src={Jio} alt="cmp1" />
+          <ServiesCompanyImg src={Tech} alt="cmp2" />
+        </ServiesCompanyImgContainer>
+      </ServicesContainer>
+      <FooterContainer>
+        <SocialIconsContainer>
+          <i
+            class="bi bi-instagram"
+            style={{
+              fontSize: `1.5rem`,
+              color: `#fff`,
+              padding: `0.2rem 1rem`,
+              cursor: `pointer`,
+            }}
+          ></i>
+          <i
+            class="bi bi-youtube"
+            style={{
+              fontSize: `1.5rem`,
+              color: `#fff`,
+              padding: `0.2rem 1rem`,
+              cursor: `pointer`,
+            }}
+          ></i>
+          <i
+            class="bi bi-linkedin"
+            style={{
+              fontSize: `1.5rem`,
+              color: `#fff`,
+              padding: `0.2rem 1rem`,
+              cursor: `pointer`,
+            }}
+          ></i>
+          <i
+            class="bi bi-twitter"
+            style={{
+              fontSize: `1.5rem`,
+              color: `#fff`,
+              padding: `0.2rem 1rem`,
+              cursor: `pointer`,
+            }}
+          ></i>
+          <i
+            class="bi bi-github"
+            style={{
+              fontSize: `1.5rem`,
+              color: `#fff`,
+              padding: `0.2rem 1rem`,
+              cursor: `pointer`,
+            }}
+          ></i>
+        </SocialIconsContainer>
+        <SocialCopyRightContainer>
+          Copy right &#169; 2022
+        </SocialCopyRightContainer>
+      </FooterContainer>
+    </HomePageConatinerWrapper>
   );
 }
