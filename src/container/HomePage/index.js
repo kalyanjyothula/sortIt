@@ -171,7 +171,7 @@ export default function HomePage(props) {
           ></i>
         </SocialIconsContainer>
         <SocialCopyRightContainer>
-          Copy right &#169; 2022
+          copyright &#169; 2022
         </SocialCopyRightContainer>
       </FooterContainer>
     </HomePageConatinerWrapper>

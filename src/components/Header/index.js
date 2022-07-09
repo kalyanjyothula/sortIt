@@ -12,11 +12,12 @@ import {
 } from "./elements";
 
 export default function Header(props) {
+  const { blockSignup } = props;
   return (
     <HeaderContainer>
       <TitleContainer>
         <TitleLogo>S</TitleLogo>
-        <HeaderTitle>SortIt</HeaderTitle>
+        <HeaderTitle to="/">SortIt</HeaderTitle>
       </TitleContainer>
       <NavBarHeader>
         <NavBarLink to="/">Home</NavBarLink>
@@ -26,9 +27,13 @@ export default function Header(props) {
       </NavBarHeader>
       <NavBarUserActiosContainer>
         <NavBarLink to="/contact">contact Sales</NavBarLink>
-        <LoginButtonLink to="/signup" color="red">
-          <span>Sign Up</span>
-        </LoginButtonLink>
+        {!blockSignup ? (
+          <LoginButtonLink to="/signup" color="red">
+            <span>Sign Up</span>
+          </LoginButtonLink>
+        ) : (
+          ""
+        )}
         <LoginButtonLink to="/login">Log in</LoginButtonLink>
       </NavBarUserActiosContainer>
     </HeaderContainer>
