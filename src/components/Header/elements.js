@@ -38,12 +38,18 @@ export const TitleLogo = styled.span`
   /* border: 1px solid red; */
 `;
 
-export const HeaderTitle = styled.h1`
+export const HeaderTitle = styled(Link)`
   letter-spacing: 0.18rem;
+  text-decoration: none;
   font-size: 2rem;
   text-align: center;
   font-weight: 500;
-  margin: 4px 2px;
+  margin: 2px;
+  cursor: pointer;
+  color: #000;
+  :hover {
+    color: #000;
+  }
   /* border: 1px solid red; */
 `;
 
