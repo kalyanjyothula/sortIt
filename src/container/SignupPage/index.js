@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../../components/Header";
 import PropTypes from "prop-types";
+import { ToastContainer, toast } from "react-toastify";
 
 import {
   SignUpContentHeader,
@@ -23,20 +24,47 @@ import {
   signupPageSelector,
   updatedUserDetails,
 } from "./reducer";
+import { useNavigate } from "react-router-dom";
+import { ToastContainerMsg } from "../../components/Toast/elements";
 
 export default function SignupPage() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleInputChange = ({ target }, id) => {
     dispatch(updatedUserDetails({ id, value: target.value }));
   };
-  const { createUserDetails, loading } = useSelector(signupPageSelector);
+  const {
+    createUserDetails,
+    loading,
+    createAccountSuccessMsg,
+    createAccountErrorMsg,
+  } = useSelector(signupPageSelector);
   const handleOnSubmit = (e) => {
     e.preventDefault();
     dispatch(createUserAccount(createUserDetails));
   };
+  // useEffect(() => {
+  //   toast.error("error");
+  // }, []);
+
+  useEffect(() => {
+    if (createAccountErrorMsg) {
+      toast.error(createAccountErrorMsg);
+    }
+    if (createAccountSuccessMsg) {
+      toast.success(createAccountSuccessMsg);
+      navigate('/app')
+    }
+  }, [createAccountErrorMsg, createAccountSuccessMsg, navigate]);
 
   return (
     <SignUpPageContainer>
+      {createAccountSuccessMsg || createAccountErrorMsg ? (
+        <ToastContainerMsg />
+      ) : (
+        ""
+      )}
+
       <Header blockSignup={true} />
       <SignUpPageConatinerDivision>
         <SignUpPageImageDiv>
@@ -85,7 +113,7 @@ export default function SignupPage() {
               />
             </SignUpInpuLableContainer>
             <SubmitButton type="submit" loading={loading ? 1 : 0}>
-              Submit
+              Sign Up
             </SubmitButton>
           </SignUpPageForm>
         </SignUpPageSignup>

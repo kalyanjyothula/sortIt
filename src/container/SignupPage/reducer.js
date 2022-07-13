@@ -19,19 +19,41 @@ const createAccountReducer = createSlice({
       return {
         ...state,
         createUserDetails,
+        createAccountSuccessMsg: "",
+        createAccountErrorMsg: "",
       };
     },
     createUserAccount(state, { payload }) {
       return {
         ...state,
         loading: true,
+        createAccountSuccessMsg: "",
+        createAccountErrorMsg: "",
+      };
+    },
+    createAccountSuccess(state, { payload }) {
+      return {
+        ...state,
+        loading: false,
+        createAccountSuccessMsg: "Account Created Successfully !",
+      };
+    },
+    createAccountFail(state, { payload }) {
+      return {
+        ...state,
+        loading: false,
+        createAccountErrorMsg: "Something Went Wrong !",
       };
     },
   },
 });
 
-export const { updatedUserDetails, createUserAccount } =
-  createAccountReducer.actions;
+export const {
+  updatedUserDetails,
+  createUserAccount,
+  createAccountSuccess,
+  createAccountFail,
+} = createAccountReducer.actions;
 
 export const signupPageSelector = (state) => state.createAccount;
 
