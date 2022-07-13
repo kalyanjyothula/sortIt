@@ -105,7 +105,7 @@ export default function HomePage(props) {
           </StoriesContentImgWrapper>
           <StoryContentWrapper>
             SortIt has become such an integral part of our work! By putting our
-            work on ClickUp and organizing it into Sprints, we made it easy to
+            work on SortIt and organizing it into Sprints, we made it easy to
             work across departments without overloading ourselves with meetings
             and email threads.
           </StoryContentWrapper>

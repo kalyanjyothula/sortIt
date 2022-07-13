@@ -1,14 +1,25 @@
 import { takeLatest, call, put } from "redux-saga/effects";
-import { createUserAccount } from "./reducer";
+import {
+  createAccountFail,
+  createAccountSuccess,
+  createUserAccount,
+} from "./reducer";
 import axios from "axios";
 
-export function* createUserAccountAsync(action) {
+export function* createUserAccountAsync({ payload }) {
   try {
-    const url = "https://jsonplaceholder.typicode.com/users";
-    const { data } = yield call(axios, { method: "GET", url });
-    // console.log(action, "saga");
+    const url = "/api/signup";
+    const {
+      data: { success, token },
+    } = yield call(axios, { method: "POST", data: payload, url });
+    if (success) {
+      yield localStorage.setItem('token', JSON.stringify(token))
+      yield put(createAccountSuccess());
+    }
+    else yield put(createAccountFail());
   } catch (error) {
     console.log(error);
+    yield put(createAccountFail());
   }
 }
 
