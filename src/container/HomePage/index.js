@@ -38,7 +38,7 @@ import Visual from "../../icons/Visual";
 import Colabrate from "../../icons/Colabrate";
 import Track from "../../icons/Track";
 
-export default function HomePage(props) {
+export default function HomePage() {
   return (
     <HomePageConatinerWrapper>
       <Header />
@@ -48,7 +48,7 @@ export default function HomePage(props) {
         </HomePageTitleHeader>
         <HomePageSubTitle>
           Plan, track, and manage any type of work with project management that
-          flexes to your team's needs.Tackle work from any angle with 20+
+          flexes to your teams needs.Tackle work from any angle with 20+
           real-time views that adapt to your needs. Track tasks on List, update
           workflows on a Board, drag-and-drop due dates on a Calendar, and so
           much more.
@@ -125,7 +125,7 @@ export default function HomePage(props) {
       <FooterContainer>
         <SocialIconsContainer>
           <i
-            class="bi bi-instagram"
+            className="bi bi-instagram"
             style={{
               fontSize: `1.5rem`,
               color: `#fff`,
@@ -134,7 +134,7 @@ export default function HomePage(props) {
             }}
           ></i>
           <i
-            class="bi bi-youtube"
+            className="bi bi-youtube"
             style={{
               fontSize: `1.5rem`,
               color: `#fff`,
@@ -143,7 +143,7 @@ export default function HomePage(props) {
             }}
           ></i>
           <i
-            class="bi bi-linkedin"
+            className="bi bi-linkedin"
             style={{
               fontSize: `1.5rem`,
               color: `#fff`,
@@ -152,7 +152,7 @@ export default function HomePage(props) {
             }}
           ></i>
           <i
-            class="bi bi-twitter"
+            className="bi bi-twitter"
             style={{
               fontSize: `1.5rem`,
               color: `#fff`,
@@ -161,7 +161,7 @@ export default function HomePage(props) {
             }}
           ></i>
           <i
-            class="bi bi-github"
+            className="bi bi-github"
             style={{
               fontSize: `1.5rem`,
               color: `#fff`,

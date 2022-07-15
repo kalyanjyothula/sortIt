@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../../components/Header";
 import PropTypes from "prop-types";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import {
   SignUpContentHeader,
@@ -53,7 +53,7 @@ export default function SignupPage() {
     }
     if (createAccountSuccessMsg) {
       toast.success(createAccountSuccessMsg);
-      navigate('/app')
+      navigate("/app");
     }
   }, [createAccountErrorMsg, createAccountSuccessMsg, navigate]);
 
@@ -70,7 +70,7 @@ export default function SignupPage() {
         <SignUpPageImageDiv>
           <SignupUserAwareContent>
             <SignUpContentHeader>
-              Looks like you're new here!
+              Looks like you are new here!
             </SignUpContentHeader>
             <SignUpParagraph>
               Join our group in few minutes! Sign up with your details to get

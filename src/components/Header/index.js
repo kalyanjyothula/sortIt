@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   HeaderContainer,
   HeaderTitle,
@@ -39,3 +40,7 @@ export default function Header(props) {
     </HeaderContainer>
   );
 }
+
+Header.propTypes = {
+  blockSignup: PropTypes.bool,
+};
