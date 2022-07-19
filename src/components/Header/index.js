@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { isMobile } from "react-device-detect";
 import {
   HeaderContainer,
   HeaderTitle,
@@ -13,21 +14,25 @@ import {
 } from "./elements";
 
 export default function Header(props) {
-  const { blockSignup } = props;
+  const { blockSignup, blockLogin } = props;
   return (
     <HeaderContainer>
       <TitleContainer>
         <TitleLogo>S</TitleLogo>
         <HeaderTitle to="/">SortIt</HeaderTitle>
       </TitleContainer>
-      <NavBarHeader>
-        <NavBarLink to="/">Home</NavBarLink>
-        <NavBarLink to="/features">Features</NavBarLink>
-        <NavBarLink to="/services">Services</NavBarLink>
-        <NavBarLink to="/about">About</NavBarLink>
-      </NavBarHeader>
+      {!isMobile ? (
+        <NavBarHeader>
+          <NavBarLink to="/">Home</NavBarLink>
+          <NavBarLink to="/features">Features</NavBarLink>
+          <NavBarLink to="/services">Services</NavBarLink>
+          <NavBarLink to="/about">About</NavBarLink>
+        </NavBarHeader>
+      ) : (
+        ""
+      )}
       <NavBarUserActiosContainer>
-        <NavBarLink to="/contact">contact Sales</NavBarLink>
+        {isMobile ? "" : <NavBarLink to="/contact">contact Sales</NavBarLink>}
         {!blockSignup ? (
           <LoginButtonLink to="/signup" color="red">
             <span>Sign Up</span>
@@ -35,7 +40,11 @@ export default function Header(props) {
         ) : (
           ""
         )}
-        <LoginButtonLink to="/login">Log in</LoginButtonLink>
+        {!blockLogin ? (
+          <LoginButtonLink to="/login">Log in</LoginButtonLink>
+        ) : (
+          ""
+        )}
       </NavBarUserActiosContainer>
     </HeaderContainer>
   );
@@ -43,4 +52,5 @@ export default function Header(props) {
 
 Header.propTypes = {
   blockSignup: PropTypes.bool,
+  blockLogin: PropTypes.bool,
 };

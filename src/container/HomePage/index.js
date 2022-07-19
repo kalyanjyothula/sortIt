@@ -42,7 +42,7 @@ export default function HomePage() {
   return (
     <HomePageConatinerWrapper>
       <Header />
-      <HomePageBCImageContainer>
+      <HomePageBCImageContainer loading="eager">
         <HomePageTitleHeader>
           one app that manges your events
         </HomePageTitleHeader>

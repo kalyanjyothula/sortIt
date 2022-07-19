@@ -23,7 +23,7 @@ const createAccountReducer = createSlice({
         createAccountErrorMsg: "",
       };
     },
-    createUserAccount(state, { payload }) {
+    createUserAccount(state ) {
       return {
         ...state,
         loading: true,
@@ -31,14 +31,14 @@ const createAccountReducer = createSlice({
         createAccountErrorMsg: "",
       };
     },
-    createAccountSuccess(state, { payload }) {
+    createAccountSuccess(state) {
       return {
         ...state,
         loading: false,
         createAccountSuccessMsg: "Account Created Successfully !",
       };
     },
-    createAccountFail(state, { payload }) {
+    createAccountFail(state) {
       return {
         ...state,
         loading: false,

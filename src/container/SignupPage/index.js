@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Header from "../../components/Header";
 import PropTypes from "prop-types";
 import { toast } from "react-toastify";
+import { isMobile } from "react-device-detect";
 
 import {
   SignUpContentHeader,
@@ -74,7 +75,7 @@ export default function SignupPage() {
             </SignUpContentHeader>
             <SignUpParagraph>
               Join our group in few minutes! Sign up with your details to get
-              started
+              started {isMobile ? <h2>Scroll down for Signup </h2> : ""}
             </SignUpParagraph>
           </SignupUserAwareContent>
         </SignUpPageImageDiv>
