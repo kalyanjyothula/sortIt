@@ -9,6 +9,9 @@ export const HeaderContainer = styled.div`
   /* border: 1px solid red; */
   transition: var(--transition);
   /* background: var(--clr-primary-2); */
+  @media screen and (max-width: 992px) {
+    justify-content: space-between;
+  }
 `;
 
 export const TitleContainer = styled.div`
@@ -75,6 +78,9 @@ export const NavBarUserActiosContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 25%;
+  @media screen and (max-width: 992px) {
+    width: 45%;
+  }
 `;
 
 export const LoginButtonLink = styled(Link)`
